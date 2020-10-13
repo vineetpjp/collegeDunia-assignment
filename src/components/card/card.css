@@ -1,0 +1,364 @@
+:root {
+  --promotedTag-color: #68a7ff;
+  --promotedTag-height: 33px;
+  --promotedTag-width: 132px;
+  --promotedTag-beforeWidth: 20px;
+  --squash: #f5a626;
+  --greyish-brown: #444444;
+  --greyish: #adadad;
+  --greeny-blue: #37b396;
+  --greeny-blue-2: #4bb89e;
+  --water-blue: #1999d2;
+}
+
+html {
+  font-size: 64.5%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.19rem;
+  line-height: 1.7;
+  color: #444444;
+  padding: 3rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main-heading {
+  font-size: 1.85rem;
+}
+
+.card__content_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.card__content_row-2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.card__content_left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.card__content_right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+/* card-container */
+
+.card {
+  border-radius: 3.8px;
+  box-shadow: 0 0 19px 0 rgba(68, 68, 68, 0.1);
+  border: solid 0.2px var(--greyish-brown);
+  background-color: #ffffff;
+  position: relative;
+}
+
+/* card-promoted-tag */
+.card__tag {
+  width: var(--promotedTag-width);
+  height: var(--promotedTag-height);
+  background-color: "red";
+  position: absolute;
+  background-color: var(--promotedTag-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: calc(-1 * var(--promotedTag-height) / 2);
+  right: -1px;
+  z-index: 10;
+}
+.card__tag::before {
+  content: "";
+  width: var(--promotedTag-beforeWidth);
+  height: calc(var(--promotedTag-height));
+  background-color: var(--promotedTag-color);
+  position: absolute;
+  left: calc(-1 * var(--promotedTag-beforeWidth) + 1px);
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 100% 50%);
+}
+
+.card__promoted {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* card-header */
+.card__header {
+  position: relative;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+.card__header::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.card__header--img {
+  width: 100%;
+  height: 100%;
+}
+
+.rating {
+  margin-left: 10px;
+}
+.rating i {
+  font-size: 11px;
+}
+/*  */
+
+.card__header_rating {
+  position: absolute;
+  top: 29px;
+  right: 14px;
+  border-radius: 3.8px;
+  background-color: var(--squash);
+  width: 75px;
+  height: 53px;
+  line-height: 18px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* font */
+
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.33;
+  text-align: center;
+  color: #ffffff;
+}
+
+.card__rating--no {
+  font-size: 1.85rem;
+  font-weight: bold;
+}
+.card__rating--total {
+  font-size: 1.35rem;
+  font-weight: normal;
+}
+
+.card__header_details {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  /* font */
+
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.33;
+  text-align: left;
+  /* flex */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  padding: 10px;
+}
+.card__header--tags {
+  display: flex;
+}
+.card__header--tag {
+  padding: 5px 10px 5px 10px;
+  border-radius: 16.5px;
+  background-color: #ffffff;
+}
+.card__header--tag:not(:first-child) {
+  margin-left: 10px;
+}
+.card__header--ranking {
+  color: #ffffff;
+}
+
+.college-name {
+  font-size: 1.85rem;
+  font-weight: bold;
+  line-height: 0.97;
+  letter-spacing: no;
+}
+
+/* card-content */
+.card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.card__content--first {
+  padding: 10px 27px 10px 17px;
+}
+.card__content--second {
+  padding: 0px 27px 10px 0;
+}
+
+.card__content--collegeinfo {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.card__content--collegeinfo:not(first-child) > div {
+  margin-top: 10px;
+}
+.card__content--feesinfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* card-content-discount */
+
+.card__discount {
+  width: 29px;
+  height: 14px;
+  background-color: #dd1c26;
+  clip-path: polygon(20% 1%, 100% 0, 100% 100%, 20% 100%, 0 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card__discount--text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.64;
+  text-align: center;
+  color: #ffffff;
+  margin-left: 3px;
+}
+.card__discount--dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+.card__originalfees {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.64;
+  text-align: center;
+  color: var(--greyish-brown);
+  display: flex;
+  margin-right: 3px;
+}
+.card__rupeeicon {
+  font-family: Myriad Pro;
+  font-weight: normal;
+}
+/* college address */
+
+.card__address {
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.33;
+  text-align: center;
+  color: var(--greyish-brown);
+}
+
+.card__address span {
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.33;
+  text-align: center;
+  color: var(--greyish);
+}
+
+.card__feescolumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 10px;
+}
+
+.card__discountedfees {
+  font-size: 28.5px;
+  font-weight: bold;
+  line-height: 0.89;
+  text-align: center;
+  color: #dd1c26;
+}
+.card__feescycle {
+  font-family: Myriad Pro;
+  font-size: 11px;
+  font-weight: normal;
+  line-height: 1.64;
+  text-align: center;
+  color: var(--greyish-brown);
+}
+
+/* amenties */
+
+.card__amenties {
+  font-size: 1.35rem;
+  font-weight: bold;
+  line-height: 1.33;
+  text-align: center;
+  color: var(--greeny-blue);
+  display: flex;
+  align-items: center;
+}
+
+.card__amenties div {
+  width: 4px;
+  height: 4px;
+  background-color: var(--greeny-blue);
+  border-radius: 50%;
+}
+/* offer */
+.card__offertext {
+  font-size: 1.35rem;
+  font-weight: bold;
+  line-height: 1.33;
+  background-color: #ccf5e7;
+  padding: 11px 20px 11px 17px;
+  border-radius: 0 20px 20px 0;
+  margin-right: 17px;
+}
+
+.card__percentmatch {
+  color: var(--greeny-blue);
+  font-weight: bold;
+}
+
+.card__famousnearestplaces {
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.33;
+}
+
+/* independent util classes */
+
+.font-greyish {
+  color: var(--greyish);
+}
+.font-greyish-brown {
+  color: var(--greyish-brown);
+  font-weight: bold;
+}
+
+.font-greenish {
+  color: var(--greeny-blue-2);
+}
+.font-water-blue {
+  color: var(--water-blue);
+}
